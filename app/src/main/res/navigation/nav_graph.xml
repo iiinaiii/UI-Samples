@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.iiinaiii.uisamples.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_extendedFabFragment"
+            app:destination="@id/extendedFabFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/extendedFabFragment"
+        android:name="com.iiinaiii.uisamples.ExtendedFabFragment"
+        android:label="ExtendedFabFragment" />
 </navigation>

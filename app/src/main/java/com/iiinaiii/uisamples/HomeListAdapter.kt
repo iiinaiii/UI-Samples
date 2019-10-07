@@ -6,9 +6,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-data class HomeListData(val title: String)
+enum class HomeListType(val titleId: Int) {
+    EXTENDED_FAB(R.string.title_extended_fab)
+}
 
-class HomeListAdapter(private val dataList: List<HomeListData>) :
+data class HomeListData(val type: HomeListType)
+
+class HomeListAdapter(
+    private val dataList: List<HomeListData>,
+    private val onItemClick: (type: HomeListType) -> Unit
+) :
     RecyclerView.Adapter<HomeListAdapter.HomeListViewHolder>() {
 
     class HomeListViewHolder(itemView: View) :
@@ -22,8 +29,11 @@ class HomeListAdapter(private val dataList: List<HomeListData>) :
     }
 
     override fun onBindViewHolder(holder: HomeListViewHolder, position: Int) {
-        val data = dataList[holder.adapterPosition]
-        holder.title.text = data.title
+        val data = dataList[position]
+        holder.title.setText(data.type.titleId)
+        holder.itemView.setOnClickListener {
+            onItemClick.invoke(data.type)
+        }
     }
 
     override fun getItemCount() = dataList.size
