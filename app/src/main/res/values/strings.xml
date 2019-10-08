@@ -2,4 +2,5 @@
     <string name="app_name">UI Samples</string>
 
     <string name="title_extended_fab">Extended Fab</string>
+    <string name="create">CREATE</string>
 </resources>
