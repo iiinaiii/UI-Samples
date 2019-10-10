@@ -1,4 +1,4 @@
-package com.iiinaiii.uisamples
+package com.iiinaiii.uisamples.extendedfab
 
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.iiinaiii.uisamples.R
 
 data class ExtendedFabData(val avatar: Drawable, val name: String)
 

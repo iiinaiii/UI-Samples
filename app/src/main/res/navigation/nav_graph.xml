@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/extendedFabFragment"
-        android:name="com.iiinaiii.uisamples.ExtendedFabFragment"
+        android:name="com.iiinaiii.uisamples.extendedfab.ExtendedFabFragment"
         android:label="ExtendedFabFragment" />
 </navigation>
