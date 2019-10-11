@@ -1,7 +1,6 @@
 package com.iiinaiii.uisamples.extendedfab
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,18 +26,12 @@ class ExtendedFabFragment : Fragment(R.layout.fragment_extended_fab) {
             val linearLayoutManager = LinearLayoutManager(context)
             layoutManager = linearLayoutManager
             adapter = ExtendedFabListAdapter(
-                dataList = (1..100).map { createExtendedFabData() }
+                dataList = (1..70).map { createExtendedFabData(it) }
             )
             addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                     super.onScrollStateChanged(recyclerView, newState)
-                    val fvip = linearLayoutManager.findFirstVisibleItemPosition()
-                    val compVisiblePos =
-                        linearLayoutManager.findFirstCompletelyVisibleItemPosition()
-                    Log.d(
-                        "aaa",
-                        "state = $newState, firstVisible = $fvip, firstComp = $compVisiblePos"
-                    )
+                    val compVisiblePos = linearLayoutManager.findFirstCompletelyVisibleItemPosition()
 
                     if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                         if (compVisiblePos == 0) {
@@ -53,9 +46,7 @@ class ExtendedFabFragment : Fragment(R.layout.fragment_extended_fab) {
         }
     }
 
-    private fun createExtendedFabData(): ExtendedFabData {
-        val avatar =
-            resources.getDrawable(R.drawable.ic_avatar_smile_24dp, requireActivity().theme)
+    private fun createExtendedFabData(num: Int): ExtendedFabData {
         val name = listOf(
             "Anim",
             "Ben",
@@ -69,6 +60,7 @@ class ExtendedFabFragment : Fragment(R.layout.fragment_extended_fab) {
             "Jeff",
             "Krric"
         ).random()
-        return ExtendedFabData(avatar, name)
+        val avatarUrl = "https://i.pravatar.cc/150?img=$num"
+        return ExtendedFabData(avatarUrl, name)
     }
 }

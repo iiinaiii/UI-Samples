@@ -1,15 +1,16 @@
 package com.iiinaiii.uisamples.extendedfab
 
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.api.load
+import coil.transform.CircleCropTransformation
 import com.iiinaiii.uisamples.R
 
-data class ExtendedFabData(val avatar: Drawable, val name: String)
+data class ExtendedFabData(val avatarUrl: String, val name: String)
 
 class ExtendedFabListAdapter(private val dataList: List<ExtendedFabData>) :
     RecyclerView.Adapter<ExtendedFabListAdapter.ExtendedFabViewHolder>() {
@@ -28,7 +29,9 @@ class ExtendedFabListAdapter(private val dataList: List<ExtendedFabData>) :
     override fun onBindViewHolder(holder: ExtendedFabViewHolder, position: Int) {
         val data = dataList[position]
         holder.name.text = data.name
-        holder.avatar.setImageDrawable(data.avatar)
+        holder.avatar.load(data.avatarUrl) {
+            transformations(CircleCropTransformation())
+        }
     }
 
     override fun getItemCount() = dataList.size
