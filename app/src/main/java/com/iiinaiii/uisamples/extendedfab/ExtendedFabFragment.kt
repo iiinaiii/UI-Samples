@@ -2,7 +2,10 @@ package com.iiinaiii.uisamples.extendedfab
 
 import android.os.Bundle
 import android.view.View
+import android.widget.LinearLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.iiinaiii.uisamples.R
@@ -28,6 +31,10 @@ class ExtendedFabFragment : Fragment(R.layout.fragment_extended_fab) {
             adapter = ExtendedFabListAdapter(
                 dataList = (1..70).map { createExtendedFabData(it) }
             )
+            addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL).apply {
+                val dividerDrawable = ContextCompat.getDrawable(context, R.drawable.list_divider)
+                dividerDrawable?.let { setDrawable(it) }
+            })
             addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                     super.onScrollStateChanged(recyclerView, newState)
