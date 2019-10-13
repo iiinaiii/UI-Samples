@@ -1,6 +1,8 @@
 package com.iiinaiii.uisamples.extendedfab
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
@@ -22,6 +24,16 @@ class ExtendedFabFragment : Fragment(R.layout.fragment_extended_fab) {
             it.viewModel = ExtendedFabViewModel()
         }
         setupRecyclerView()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_reference, menu)
+
+        val referenceLink = menu.findItem(R.id.reference_link)
+//        referenceLink.setOnMenuItemClickListener {
+//
+//        }
     }
 
     private fun setupRecyclerView() {

@@ -1,10 +1,11 @@
-package com.iiinaiii.uisamples
+package com.iiinaiii.uisamples.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.iiinaiii.uisamples.R
 import com.iiinaiii.uisamples.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

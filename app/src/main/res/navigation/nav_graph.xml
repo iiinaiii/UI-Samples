@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.iiinaiii.uisamples.HomeFragment"
+        android:name="com.iiinaiii.uisamples.ui.home.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_extendedFabFragment"

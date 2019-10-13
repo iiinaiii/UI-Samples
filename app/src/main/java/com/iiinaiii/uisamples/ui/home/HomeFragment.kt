@@ -1,10 +1,11 @@
-package com.iiinaiii.uisamples
+package com.iiinaiii.uisamples.ui.home
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.iiinaiii.uisamples.R
 import com.iiinaiii.uisamples.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
