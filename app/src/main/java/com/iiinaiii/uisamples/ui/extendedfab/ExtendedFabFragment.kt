@@ -3,19 +3,28 @@ package com.iiinaiii.uisamples.extendedfab
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.iiinaiii.uisamples.R
 import com.iiinaiii.uisamples.databinding.FragmentExtendedFabBinding
+import com.iiinaiii.uisamples.ext.launchViewAction
 
 class ExtendedFabFragment : Fragment(R.layout.fragment_extended_fab) {
 
     private lateinit var binding: FragmentExtendedFabBinding
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -29,11 +38,18 @@ class ExtendedFabFragment : Fragment(R.layout.fragment_extended_fab) {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_reference, menu)
+    }
 
-        val referenceLink = menu.findItem(R.id.reference_link)
-//        referenceLink.setOnMenuItemClickListener {
-//
-//        }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when {
+            item.itemId == R.id.reference_link -> {
+                "https://material.io/components/buttons-floating-action-button/#extended-fab"
+                    .toUri()
+                    .launchViewAction(requireContext())
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun setupRecyclerView() {
