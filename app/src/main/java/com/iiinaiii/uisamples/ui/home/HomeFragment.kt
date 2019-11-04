@@ -3,10 +3,17 @@ package com.iiinaiii.uisamples.ui.home
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iiinaiii.uisamples.R
 import com.iiinaiii.uisamples.databinding.FragmentHomeBinding
+import com.iiinaiii.uisamples.ui.home.item.ExpandableHeaderItem
+import com.iiinaiii.uisamples.ui.home.item.HomeListChildItem
+import com.iiinaiii.uisamples.ui.home.item.HomeListItem
+import com.xwray.groupie.ExpandableGroup
+import com.xwray.groupie.Group
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.GroupieViewHolder
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
@@ -19,19 +26,45 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun setupRecyclerView() {
-        binding.homeRecyclerView.apply {
+        val recyclerView = binding.homeRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = HomeListAdapter(
-                dataList = listOf(
-                    HomeListData(HomeListType.EXTENDED_FAB)
-                )
-            ) { type ->
-                when (type) {
-                    HomeListType.EXTENDED_FAB -> {
-                        findNavController().navigate(R.id.action_homeFragment_to_extendedFabFragment)
+        }
+
+        val groupList: List<Group> = ParentHomeListType.values().map { parentType ->
+            when {
+                parentType.hasChild() -> {
+                    ExpandableGroup(ExpandableHeaderItem(HomeListData(parentType)))
+                        .apply {
+                            parentType.children.forEach { childType ->
+                                add(HomeListChildItem(HomeListData(childType)) {
+                                    actionHomeList(it)
+                                })
+                            }
+                        }
+                }
+                else -> {
+                    HomeListItem(HomeListData(parentType)) {
+                        actionHomeList(it)
                     }
                 }
             }
         }
+        val groupAdapter = GroupAdapter<GroupieViewHolder>().apply {
+            addAll(groupList)
+        }
+
+        recyclerView.adapter = groupAdapter
     }
+
+    private fun actionHomeList(type: HomeListType) {
+        when (type) {
+            ParentHomeListType.EXTENDED_FAB -> {
+                findNavController().navigate(R.id.action_homeFragment_to_extendedFabFragment)
+            }
+            ChildHomeListType.MOTION_LAYOUT_YOUTUBE -> {
+
+            }
+        }
+    }
+
 }

@@ -2,6 +2,8 @@
     <string name="app_name">UI Samples</string>
 
     <string name="title_extended_fab">Extended Fab</string>
+    <string name="title_motion_layout">Motion Layout</string>
+    <string name="title_youtube_style">Youtube Style</string>
     <string name="create">CREATE</string>
     <string name="reference">Reference</string>
 </resources>
