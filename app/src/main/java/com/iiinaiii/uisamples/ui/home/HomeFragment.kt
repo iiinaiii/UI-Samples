@@ -61,6 +61,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             ParentHomeListType.EXTENDED_FAB -> {
                 findNavController().navigate(R.id.action_homeFragment_to_extendedFabFragment)
             }
+            ChildHomeListType.MOTION_LAYOUT_SIMPLE_01 -> {
+                findNavController().navigate(R.id.action_homeFragment_to_simpleMotionFragment01)
+            }
             ChildHomeListType.MOTION_LAYOUT_YOUTUBE -> {
 
             }

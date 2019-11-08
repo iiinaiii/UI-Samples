@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.iiinaiii.uisamples.R
 import com.iiinaiii.uisamples.databinding.FragmentExtendedFabBinding
+import com.iiinaiii.uisamples.ext.addSystemWindowInsetToMargin
+import com.iiinaiii.uisamples.ext.addSystemWindowInsetToPadding
 import com.iiinaiii.uisamples.ext.launchViewAction
 
 class ExtendedFabFragment : Fragment(R.layout.fragment_extended_fab) {
@@ -33,6 +35,7 @@ class ExtendedFabFragment : Fragment(R.layout.fragment_extended_fab) {
             it.viewModel = ExtendedFabViewModel()
         }
         setupRecyclerView()
+//        setupBottomInsets()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -79,6 +82,11 @@ class ExtendedFabFragment : Fragment(R.layout.fragment_extended_fab) {
                 }
             })
         }
+    }
+
+    private fun setupBottomInsets() {
+        binding.extendedFab.addSystemWindowInsetToMargin(bottom = true)
+        binding.recyclerView.addSystemWindowInsetToPadding(bottom = true)
     }
 
     private fun createExtendedFabData(num: Int): ExtendedFabData {

@@ -18,13 +18,16 @@
             android:id="@+id/recycler_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:clipToPadding="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:paddingBottomSystemWindowInsets="@{true}"
             tools:itemCount="100"
             tools:listitem="@layout/item_extended_fab" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/extended_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -32,9 +35,9 @@
             android:text="@string/create"
             app:icon="@drawable/ic_add_24dp"
             app:iconPadding="4dp"
-            app:isExtend="@{viewModel.isFabExtended}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_marginBottomSystemWindowInsets="@{true}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

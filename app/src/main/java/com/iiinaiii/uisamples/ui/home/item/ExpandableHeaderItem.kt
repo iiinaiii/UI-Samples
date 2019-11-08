@@ -25,10 +25,10 @@ class ExpandableHeaderItem(private val data: HomeListData) : BindableItem<ItemEx
                     R.drawable.expand
                 }
             )
-            setOnClickListener {
-                expandableGroup.onToggleExpanded()
-                bindIcon(viewBinding)
-            }
+        }
+        viewBinding.root.setOnClickListener {
+            expandableGroup.onToggleExpanded()
+            bindIcon(viewBinding)
         }
 
     }

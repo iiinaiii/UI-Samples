@@ -1,13 +1,16 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Base.AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorOnPrimary">@color/colorOnPrimary</item>
         <item name="colorControlNormal">@color/colorOnPrimary</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
+
+    <style name="AppTheme" parent="Base.AppTheme" />
 
     <style name="ToolbarTheme" parent="Theme.MaterialComponents.Light">
         <item name="android:textColorPrimary">@color/colorOnPrimary</item>
