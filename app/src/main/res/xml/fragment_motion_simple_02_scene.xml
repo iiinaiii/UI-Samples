@@ -6,33 +6,43 @@
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
         motion:duration="1000">
+        <OnSwipe motion:dragDirection="dragRight" />
         <KeyFrameSet>
             <KeyPosition
-                motion:framePosition="50"
+                motion:framePosition="49"
                 motion:keyPositionType="pathRelative"
-                motion:motionTarget="@+id/sunny"
+                motion:motionTarget="@+id/sunny_moon"
+                motion:pathMotionArc="flip"
                 motion:percentY="-0.5" />
         </KeyFrameSet>
-        <OnSwipe motion:dragDirection="dragRight" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
         <Constraint
-            android:id="@+id/sunny"
+            android:id="@+id/sunny_moon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toTopOf="parent" />
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:pathMotionArc="startVertical">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
-            android:id="@+id/sunny"
+            android:id="@+id/sunny_moon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintTop_toTopOf="parent" />
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="1" />
+        </Constraint>
     </ConstraintSet>
 </MotionScene>

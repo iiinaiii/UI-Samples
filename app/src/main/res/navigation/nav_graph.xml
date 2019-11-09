@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_homeFragment_to_simpleMotionFragment01"
             app:destination="@id/simpleMotionFragment01" />
+        <action
+            android:id="@+id/action_homeFragment_to_simpleMotionFragment02"
+            app:destination="@id/simpleMotionFragment02" />
     </fragment>
     <fragment
         android:id="@+id/extendedFabFragment"
@@ -23,4 +26,8 @@
         android:id="@+id/simpleMotionFragment01"
         android:name="com.iiinaiii.uisamples.ui.motionlayout.SimpleMotionFragment01"
         android:label="SimpleMotionFragment" />
+    <fragment
+        android:id="@+id/simpleMotionFragment02"
+        android:name="com.iiinaiii.uisamples.ui.motionlayout.SimpleMotionFragment02"
+        android:label="SimpleMotionFragment02" />
 </navigation>
