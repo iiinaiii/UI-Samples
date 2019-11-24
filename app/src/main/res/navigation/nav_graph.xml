@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_homeFragment_to_simpleMotionFragment02"
             app:destination="@id/simpleMotionFragment02" />
+        <action
+            android:id="@+id/action_homeFragment_to_keyCycleFragment01"
+            app:destination="@id/keyCycleFragment01" />
     </fragment>
     <fragment
         android:id="@+id/extendedFabFragment"
@@ -30,4 +33,8 @@
         android:id="@+id/simpleMotionFragment02"
         android:name="com.iiinaiii.uisamples.ui.motionlayout.SimpleMotionFragment02"
         android:label="SimpleMotionFragment02" />
+    <fragment
+        android:id="@+id/keyCycleFragment01"
+        android:name="com.iiinaiii.uisamples.ui.motionlayout.KeyCycleFragment01"
+        android:label="KeyCycleFragment01" />
 </navigation>

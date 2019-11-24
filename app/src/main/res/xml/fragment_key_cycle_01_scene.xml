@@ -7,15 +7,6 @@
         motion:constraintSetStart="@id/start"
         motion:duration="1000">
         <OnSwipe motion:dragDirection="dragRight" />
-        <KeyFrameSet>
-            <KeyPosition />
-            <KeyCycle
-                motion:motionTarget="@+id/sunny_moon"
-                motion:framePosition="50"
-                motion:wavePeriod="1"
-                android:alpha="0.5"
-                motion:waveOffset="0.5" />
-        </KeyFrameSet>
     </Transition>
 
     <ConstraintSet android:id="@+id/start">

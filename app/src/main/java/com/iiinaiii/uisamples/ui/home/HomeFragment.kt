@@ -67,6 +67,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             ChildHomeListType.MOTION_LAYOUT_SIMPLE_02 -> {
                 findNavController().navigate(R.id.action_homeFragment_to_simpleMotionFragment02)
             }
+            ChildHomeListType.MOTION_LAYOUT_KEY_CYCLE_01 -> {
+                findNavController().navigate(R.id.action_homeFragment_to_keyCycleFragment01)
+            }
             ChildHomeListType.MOTION_LAYOUT_YOUTUBE -> {
 
             }
