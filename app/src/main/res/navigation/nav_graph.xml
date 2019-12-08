@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_homeFragment_to_youtubeLikeFragment"
             app:destination="@id/youtubeLikeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_googleCalenderLikeFragment"
+            app:destination="@id/googleCalenderLikeFragment" />
     </fragment>
     <fragment
         android:id="@+id/extendedFabFragment"
@@ -44,4 +47,8 @@
         android:id="@+id/youtubeLikeFragment"
         android:name="com.iiinaiii.uisamples.ui.motionlayout.YoutubeLikeFragment"
         android:label="YoutubeLikeFragment" />
+    <fragment
+        android:id="@+id/googleCalenderLikeFragment"
+        android:name="com.iiinaiii.uisamples.ui.motionlayout.GoogleCalenderLikeFragment"
+        android:label="GoogleCalenderLikeFragment" />
 </navigation>

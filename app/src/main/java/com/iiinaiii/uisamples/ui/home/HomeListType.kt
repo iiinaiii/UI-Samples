@@ -16,7 +16,8 @@ enum class ParentHomeListType(vararg val children: ChildHomeListType) : HomeList
         ChildHomeListType.MOTION_LAYOUT_SIMPLE_01,
         ChildHomeListType.MOTION_LAYOUT_SIMPLE_02,
         ChildHomeListType.MOTION_LAYOUT_KEY_CYCLE_01,
-        ChildHomeListType.MOTION_LAYOUT_YOUTUBE
+        ChildHomeListType.MOTION_LAYOUT_YOUTUBE,
+        ChildHomeListType.MOTION_LAYOUT_GOOGLE_CALENDAR
     ) {
         override val titleId: Int = R.string.title_motion_layout
     };
@@ -38,5 +39,8 @@ enum class ChildHomeListType : HomeListType {
     MOTION_LAYOUT_YOUTUBE {
         override val titleId: Int = R.string.title_youtube_style
     },
+    MOTION_LAYOUT_GOOGLE_CALENDAR {
+        override val titleId: Int = R.string.title_calendar_style
+    }
 
 }

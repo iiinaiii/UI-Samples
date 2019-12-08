@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="HardcodedText">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_close" />
+
+        <TextView
+            android:id="@+id/list_item_title"
+            style="@style/SimpleIconListStyle"
+            android:drawableStart="@drawable/ic_circle"
+            android:text="予定のタイトル"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <TextView
+            android:id="@+id/list_item_date"
+            style="@style/SimpleIconListStyle"
+            android:paddingVertical="4dp"
+            android:paddingStart="64dp"
+            android:paddingEnd="16dp"
+            android:text="12月13日金曜日・18時00分〜21時00分"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/list_item_title" />
+
+        <TextView
+            android:id="@+id/list_item_place"
+            style="@style/SimpleIconListStyle"
+            android:drawableStart="@drawable/ic_room"
+            android:text="場所"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/list_item_date" />
+
+        <TextView
+            android:id="@+id/list_item_notify"
+            style="@style/SimpleIconListStyle"
+            android:drawableStart="@drawable/ic_notifications"
+            android:text="10分前"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/list_item_place" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/list_item_add_hangout"
+            style="@style/SimpleIconListStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/list_item_notify">
+
+            <ImageView
+                android:id="@+id/icon_videocam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_videocam"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/add_hangout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+
+                android:text="ビデオハングアウトに追加"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="#3366BB"
+                app:layout_constraintStart_toEndOf="@id/icon_videocam"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="meet.google.com/xxxxxxx"
+                app:layout_constraintStart_toEndOf="@id/icon_videocam"
+                app:layout_constraintStart_toStartOf="@id/add_hangout"
+                app:layout_constraintTop_toBottomOf="@id/add_hangout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/list_item_phone"
+            style="@style/SimpleIconListStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/list_item_add_hangout">
+
+            <ImageView
+                android:id="@+id/icon_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_videocam"
+                android:tint="#00000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/join_by_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+
+                android:text="電話で参加"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="#3366BB"
+                app:layout_constraintStart_toEndOf="@id/icon_call"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(US)+1 000-123-4567 PIN: 012 345 678"
+                app:layout_constraintStart_toEndOf="@id/icon_call"
+                app:layout_constraintStart_toStartOf="@id/join_by_phone"
+                app:layout_constraintTop_toBottomOf="@id/join_by_phone" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/list_item_guest"
+            style="@style/SimpleIconListStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/list_item_phone">
+
+            <ImageView
+                android:id="@+id/icon_guest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_people_alt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_guest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="ゲスト 3 人"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:layout_constraintStart_toEndOf="@id/icon_guest"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返答待ち 1 人、参加 2 人"
+                app:layout_constraintStart_toEndOf="@id/icon_guest"
+                app:layout_constraintStart_toStartOf="@id/text_guest"
+                app:layout_constraintTop_toBottomOf="@id/text_guest" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/person1"
+            style="@style/SimpleIconListStyle"
+            android:drawableStart="@drawable/ic_sentiment_satisfied"
+            android:paddingStart="60dp"
+            android:paddingEnd="16dp"
+            android:text="福沢諭吉"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/list_item_guest" />
+
+        <TextView
+            android:id="@+id/person2"
+            style="@style/SimpleIconListStyle"
+            android:drawableStart="@drawable/ic_sentiment_satisfied"
+            android:paddingStart="60dp"
+            android:paddingEnd="16dp"
+            android:text="野口英世"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/person1" />
+
+        <TextView
+            android:id="@+id/person3"
+            style="@style/SimpleIconListStyle"
+            android:drawableStart="@drawable/ic_sentiment_satisfied"
+            android:paddingStart="60dp"
+            android:paddingEnd="16dp"
+            android:text="樋口一葉"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/person2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
