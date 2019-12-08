@@ -9,4 +9,8 @@
     <string name="title_key_cycle_01">Key Cycle 01</string>
     <string name="create">CREATE</string>
     <string name="reference">Reference</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_homeFragment_to_keyCycleFragment01"
             app:destination="@id/keyCycleFragment01" />
+        <action
+            android:id="@+id/action_homeFragment_to_youtubeLikeFragment"
+            app:destination="@id/youtubeLikeFragment" />
     </fragment>
     <fragment
         android:id="@+id/extendedFabFragment"
@@ -37,4 +40,8 @@
         android:id="@+id/keyCycleFragment01"
         android:name="com.iiinaiii.uisamples.ui.motionlayout.KeyCycleFragment01"
         android:label="KeyCycleFragment01" />
+    <fragment
+        android:id="@+id/youtubeLikeFragment"
+        android:name="com.iiinaiii.uisamples.ui.motionlayout.YoutubeLikeFragment"
+        android:label="YoutubeLikeFragment" />
 </navigation>
