@@ -35,6 +35,7 @@
             android:text="@string/create"
             app:icon="@drawable/ic_add_24dp"
             app:iconPadding="4dp"
+            app:isExtend="@{viewModel.isFabExtended}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_marginBottomSystemWindowInsets="@{true}" />
