@@ -49,6 +49,6 @@
         android:label="YoutubeLikeFragment" />
     <fragment
         android:id="@+id/googleCalenderLikeFragment"
-        android:name="com.iiinaiii.uisamples.ui.motionlayout.GoogleCalenderLikeFragment"
+        android:name="com.iiinaiii.uisamples.ui.motionlayout.googlecalendar.GoogleCalenderLikeFragment"
         android:label="GoogleCalenderLikeFragment" />
 </navigation>

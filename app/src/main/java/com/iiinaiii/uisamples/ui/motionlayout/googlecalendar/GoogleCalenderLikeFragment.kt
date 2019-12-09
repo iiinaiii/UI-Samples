@@ -1,4 +1,4 @@
-package com.iiinaiii.uisamples.ui.motionlayout
+package com.iiinaiii.uisamples.ui.motionlayout.googlecalendar
 
 import android.os.Bundle
 import android.view.View
@@ -7,7 +7,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.iiinaiii.uisamples.R
 import com.iiinaiii.uisamples.ext.addSystemWindowInsetToPadding
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.toolbar
+import kotlinx.android.synthetic.main.fragment_google_calendar_like.*
 
 class GoogleCalenderLikeFragment : Fragment(R.layout.fragment_google_calendar_like) {
 
@@ -16,6 +17,18 @@ class GoogleCalenderLikeFragment : Fragment(R.layout.fragment_google_calendar_li
 
         (activity as? AppCompatActivity)?.supportActionBar?.hide()
 
+        setupToolbar()
+        setupGuestItem(person1)
+        setupGuestItem(person2)
+        setupGuestItem(person3)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        (activity as? AppCompatActivity)?.supportActionBar?.show()
+    }
+
+    private fun setupToolbar() {
         toolbar.apply {
             addSystemWindowInsetToPadding(top = true)
             setNavigationOnClickListener {
@@ -24,8 +37,13 @@ class GoogleCalenderLikeFragment : Fragment(R.layout.fragment_google_calendar_li
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        (activity as? AppCompatActivity)?.supportActionBar?.show()
+    private fun setupGuestItem(item: View) {
+        item.setOnClickListener {
+            showBottomSheet()
+        }
+    }
+
+    private fun showBottomSheet() {
+        startActivity(GoogleCalendarProfileActivity.createIntent(requireContext()))
     }
 }
