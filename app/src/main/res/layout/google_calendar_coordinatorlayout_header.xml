@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:minHeight="48dp"
-    app:layoutDescription="@xml/scene_11_header"
+    app:layoutDescription="@xml/google_calendar_header_scene"
     app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
     app:showPaths="true">
 
@@ -20,64 +20,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent" />
 
-    <androidx.constraintlayout.helper.widget.Flow
-        android:id="@+id/content_header"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/top_rounded_bg"
-        android:orientation="vertical"
-        app:constraint_referenced_ids="content_toolbar,name,divider_1,quick_actions_bar,divider_2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/content_toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/top_rounded_bg"
         android:theme="@style/ToolbarThemeWhite"
+        app:layout_constraintBottom_toTopOf="@id/content_header"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="36dp"
-        android:text="桃太郎"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <include
-        android:id="@+id/divider_1"
-        layout="@layout/divider_horizontal"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content_header_bg"
         android:layout_width="0dp"
-        android:layout_height="1dp"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@id/content_header"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/content_header" />
 
-    <!--    <androidx.constraintlayout.helper.widget.Flow-->
-    <!--        android:id="@+id/quick_actions_bar"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:orientation="horizontal"-->
-    <!--        android:paddingTop="24dp"-->
-    <!--        android:paddingBottom="24dp"-->
-    <!--        app:constraint_referenced_ids="action_mail,action_schedule, action_call"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/divider_1" />-->
-
-    <LinearLayout
-        android:id="@+id/quick_actions_bar"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content_header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingVertical="8dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="36dp"
+            android:text="桃太郎"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/divider_1"
+            layout="@layout/divider_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name" />
 
         <TextView
             android:id="@+id/action_mail"
@@ -86,7 +76,11 @@
             android:drawableTop="@drawable/ic_mail"
             android:padding="16dp"
             android:text="@string/mail"
-            android:textColor="@color/link_color_blue" />
+            android:textColor="@color/link_color_blue"
+            app:layout_constraintEnd_toStartOf="@id/action_schedule"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_1" />
 
         <TextView
             android:id="@+id/action_schedule"
@@ -95,7 +89,10 @@
             android:drawableTop="@drawable/ic_event"
             android:padding="16dp"
             android:text="@string/schedule"
-            android:textColor="@color/link_color_blue" />
+            android:textColor="@color/link_color_blue"
+            app:layout_constraintEnd_toStartOf="@id/action_call"
+            app:layout_constraintStart_toEndOf="@id/action_mail"
+            app:layout_constraintTop_toBottomOf="@id/divider_1" />
 
         <TextView
             android:id="@+id/action_call"
@@ -104,23 +101,26 @@
             android:drawableTop="@drawable/ic_call"
             android:padding="16dp"
             android:text="@string/call"
-            android:textColor="@color/link_color_blue" />
-    </LinearLayout>
+            android:textColor="@color/link_color_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/action_schedule"
+            app:layout_constraintTop_toBottomOf="@id/divider_1" />
 
-    <include
-        android:id="@+id/divider_2"
-        layout="@layout/divider_horizontal"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        <include
+            android:id="@+id/divider_2"
+            layout="@layout/divider_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/action_mail" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
         android:id="@+id/spacer"
         android:layout_width="0dp"
         android:layout_height="49dp"
-        app:layout_constraintBottom_toTopOf="@id/content_header"
+        app:layout_constraintBottom_toTopOf="@id/content_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -129,6 +129,7 @@
         android:layout_width="98dp"
         android:layout_height="98dp"
         android:background="@drawable/circle_no_padding"
+        android:contentDescription="@null"
         android:src="@drawable/ic_sample_avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
