@@ -18,4 +18,17 @@
         <item name="android:textColorSecondary">@color/colorOnPrimary</item>
     </style>
 
+    <style name="ToolbarThemeWhite" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Toolbar Title Color-->
+        <item name="android:textColorPrimary">@color/content_black</item>
+        <!-- Toolbar menu overflow icon color -->
+        <item name="android:textColorSecondary">@color/content_black</item>
+    </style>
+
+    <style name="TransparentTheme" parent="AppTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
 </resources>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.iiinaiii.uisamples.ui.widget.CollapsibleToolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:minHeight="48dp"
+    app:layoutDescription="@xml/scene_11_header"
+    app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+    app:showPaths="true">
+
+    <View
+        android:id="@+id/background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/appbar_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/content_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_rounded_bg"
+        android:orientation="vertical"
+        app:constraint_referenced_ids="content_toolbar,name,divider_1,quick_actions_bar,divider_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/content_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/ToolbarThemeWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="36dp"
+        android:text="桃太郎"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/divider_1"
+        layout="@layout/divider_horizontal"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--    <androidx.constraintlayout.helper.widget.Flow-->
+    <!--        android:id="@+id/quick_actions_bar"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:paddingTop="24dp"-->
+    <!--        android:paddingBottom="24dp"-->
+    <!--        app:constraint_referenced_ids="action_mail,action_schedule, action_call"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/divider_1" />-->
+
+    <LinearLayout
+        android:id="@+id/quick_actions_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/action_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_mail"
+            android:padding="16dp"
+            android:text="@string/mail"
+            android:textColor="@color/link_color_blue" />
+
+        <TextView
+            android:id="@+id/action_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_event"
+            android:padding="16dp"
+            android:text="@string/schedule"
+            android:textColor="@color/link_color_blue" />
+
+        <TextView
+            android:id="@+id/action_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_call"
+            android:padding="16dp"
+            android:text="@string/call"
+            android:textColor="@color/link_color_blue" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/divider_2"
+        layout="@layout/divider_horizontal"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <View
+        android:id="@+id/spacer"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        app:layout_constraintBottom_toTopOf="@id/content_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        android:background="@drawable/circle_no_padding"
+        android:src="@drawable/ic_sample_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/spacer" />
+
+</com.iiinaiii.uisamples.ui.widget.CollapsibleToolbar>
