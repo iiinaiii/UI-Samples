@@ -176,6 +176,17 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
+            android:id="@+id/person0"
+            style="@style/SimpleIconListStyle"
+            android:drawableStart="@drawable/ic_sentiment_satisfied"
+            android:paddingStart="60dp"
+            android:paddingEnd="16dp"
+            android:text="桃太郎"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/list_item_guest" />
+
+        <TextView
             android:id="@+id/person1"
             style="@style/SimpleIconListStyle"
             android:drawableStart="@drawable/ic_sentiment_satisfied"
@@ -184,7 +195,7 @@
             android:text="猿"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/list_item_guest" />
+            app:layout_constraintTop_toBottomOf="@id/person0" />
 
         <TextView
             android:id="@+id/person2"

@@ -18,6 +18,7 @@ class GoogleCalenderLikeFragment : Fragment(R.layout.fragment_google_calendar_li
         (activity as? AppCompatActivity)?.supportActionBar?.hide()
 
         setupToolbar()
+        setupGuestItem(person0)
         setupGuestItem(person1)
         setupGuestItem(person2)
         setupGuestItem(person3)

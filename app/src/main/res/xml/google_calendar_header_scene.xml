@@ -31,7 +31,6 @@
             android:layout_width="98dp"
             android:layout_height="98dp"
             android:background="@drawable/circle_no_padding"
-            android:src="@drawable/ic_sample_avatar"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="@id/spacer" />

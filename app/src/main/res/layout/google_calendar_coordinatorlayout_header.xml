@@ -7,8 +7,7 @@
     android:fitsSystemWindows="true"
     android:minHeight="48dp"
     app:layoutDescription="@xml/google_calendar_header_scene"
-    app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-    app:showPaths="true">
+    app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
 
     <View
         android:id="@+id/background"
@@ -130,7 +129,7 @@
         android:layout_height="98dp"
         android:background="@drawable/circle_no_padding"
         android:contentDescription="@null"
-        android:src="@drawable/ic_sample_avatar"
+        android:src="@drawable/momotaro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/spacer" />
