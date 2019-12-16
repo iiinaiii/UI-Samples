@@ -5,19 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:minHeight="48dp"
+    android:minHeight="?attr/actionBarSize"
     app:layoutDescription="@xml/google_calendar_header_scene"
     app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
-
-    <View
-        android:id="@+id/background"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/appbar_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/content_toolbar"
