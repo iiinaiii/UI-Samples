@@ -36,7 +36,7 @@
             motion:layout_constraintTop_toTopOf="@id/spacer" />
 
         <Constraint
-            android:id="@+id/content_header"
+            android:id="@id/content_header"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:visibility="visible"
